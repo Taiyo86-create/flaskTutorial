@@ -3,11 +3,19 @@ app = Flask(__name__)
 
 @app.get('/')
 def index():
-    book = {
+    book = [
+       {
         'title': '山田莉央グラビア',
         'price': 1200,
         'arrival_day': '2024/4/16'
-    }
+       },
+        {
+        'title': 'ちんちん',
+        'price': 2400,
+        'arrival_day': '2024/5/16'
+       }
+    ]
+       
     return render_template(
         'index.html',
         book = book
