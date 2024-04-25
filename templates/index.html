@@ -8,10 +8,14 @@
 <body>
     <h1>書籍一覧</h1>
     <h2>今月の新着</h2>
-    {% for book in book %}
-    <p>タイトル: {{ book.title}} </p>
-    <p>金額: {{ book.price}} </p>
-    <p>入荷日: {{ book.arrival_day}} </p>
-    {% endfor %}
+    {% if book == [] %}
+        <p>まだないよん</p>
+    {% else %}
+      {% for book in book %}
+        <p>タイトル: {{ book.title}} </p>
+        <p>金額: {{ book.price}} </p>
+        <p>入荷日: {{ book.arrival_day}} </p>
+      {% endfor %}
+    {% endif %}
 </body>
 </html>
