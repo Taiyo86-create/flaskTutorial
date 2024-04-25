@@ -11,10 +11,10 @@
     {% if book == [] %}
         <p>まだないよん</p>
     {% else %}
-      {% for book in book %}
-        <p>タイトル: {{ book.title}} </p>
-        <p>金額: {{ book.price}} </p>
-        <p>入荷日: {{ book.arrival_day}} </p>
+      {% for book in books %}
+        <p>タイトル: {{ books.title}} </p>
+        <p>金額: {{ books.price}} </p>
+        <p>入荷日: {{ books.arrival_day}} </p>
       {% endfor %}
     {% endif %}
 

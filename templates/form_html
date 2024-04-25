@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>書籍一覧</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <input type="text" placeholder="本のタイトル" name="title">
+        <input type="text" placeholder="価格" name="price">
+        <input type="text" placeholder="到着日" name="arrival_day">
+        <input type="submit" value="登録">
+    </form>
 </body>
 </html>
