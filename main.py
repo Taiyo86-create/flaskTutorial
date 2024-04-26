@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request
-app = Flask(__name__)
+from flask import Flask, render_template, request, redirect, url_for
+import db
 import sqlite3
+app = Flask(__name__)
 DATABASE = 'database.db'
+db.create_books_table()
 
 @app.get('/')
 def index():
@@ -13,7 +15,7 @@ def index():
         books.append({'title': row[0], 'price': row[1], 'arrival_day': row[2]})
     return render_template(
         'index.html',
-        book = book
+        books = books
         )
     
 @app.get('/form')
